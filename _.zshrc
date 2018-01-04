@@ -52,7 +52,7 @@ vcs_info_wrapper() {
     echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
   fi
 }
-RPROMPT=$'$(vcs_info_wrapper)'
+RPROMPT="$PR_LIGHT_YELLOW%T $(vcs_info_wrapper)"
 
 # 开启系统补全
 setopt AUTO_LIST
