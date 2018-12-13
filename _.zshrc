@@ -1,5 +1,6 @@
 #!/bin/zsh
 #历史纪录
+TERM=xterm
 export HISTSIZE=10000
 export HISTFILE="$HOME/.zhistory"
 export SAVEHIST=$HISTSIZE
@@ -111,6 +112,7 @@ zstyle ':completion::complete:*' cache-path .zcache
 #别名设置
 alias emacs='emacs -nw'
 alias ls='ls --color=auto'
+alias tmux='tmux -2'
 
 #Python补全
 export PYTHONSTARTUP="/home/yue/.config/pythonstartup.py"
