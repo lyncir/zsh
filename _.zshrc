@@ -117,3 +117,4 @@ alias tmux='tmux -2'
 #Python补全
 export PYTHONSTARTUP="/home/yue/.config/pythonstartup.py"
 alias goodbye='shutdown -h now'
+alias gpull='git pull && git submodule update --init --recursive --remote'
