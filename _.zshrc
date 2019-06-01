@@ -99,10 +99,16 @@ zstyle ':completion:incremental:*' completer _complete _correct
 zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
 
 #彩色补全菜单
-eval $(dircolors -b)
-export ZLSCOLORS="${LS_COLORS}"
-zmodload zsh/complist
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+if whence dircolors > /dev/null; then
+	eval $(dircolors -b)
+	export ZLSCOLORS="${LS_COLORS}"
+	zmodload zsh/complist
+	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+else
+	export CLICOLOR=1
+	zstyle ':completion:*' list-colors ''
+fi
+
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31' 
 #自动补全缓存
 zstyle ':completion::complete:*' use-cache on
